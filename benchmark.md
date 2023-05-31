@@ -16,279 +16,35 @@ MC total load time:<br>
 
 
 <p align="center">
-<img src="https://quickchart.io/chart?w=400&h=30&c={
-  type: 'horizontalBar',
-  data: {
-    datasets: [
-      {label:      'MODS:', data: [627.29]},
-      {label: 'FML stuff:', data: [557.36]}
-    ]
-  },
-  options: {
-    scales: {
-      xAxes: [{display: false,stacked: true}],
-      yAxes: [{display: false,stacked: true}],
-    },
-    elements: {rectangle: {borderWidth: 2}},
-    legend: {display: false,},
-    plugins: {datalabels: {color: 'white',formatter: (value, context) =>
-      [context.dataset.label, value].join(' ')
-    }}
-  }
-}"/>
+<img src="https://quickchart.io/chart?w=400&h=30&c={%20type:%20'horizontalBar',%20data:%20{%20datasets:%20[%20{label:%20'MODS:',%20data:%20[627.29]},%20{label:%20'FML%20stuff:',%20data:%20[557.36]}%20]%20},%20options:%20{%20scales:%20{%20xAxes:%20[{display:%20false,stacked:%20true}],%20yAxes:%20[{display:%20false,stacked:%20true}],%20},%20elements:%20{rectangle:%20{borderWidth:%202}},%20legend:%20{display:%20false,},%20plugins:%20{datalabels:%20{color:%20'white',formatter:%20(value,%20context)%20=>%20[context.dataset.label,%20value].join('%20')%20}}%20}%20}"/>
 </p>
 
 <br>
 
 # Mods Loading Time
 <p align="center">
-<img src="https://quickchart.io/chart?w=400&h=300&c={
-  type: 'outlabeledPie',
-  options: {
-    cutoutPercentage: 25,
-    plugins: {
-      legend: !1,
-      outlabels: {
-        stretch: 5,
-        padding: 1,
-        text: (v,i)=>[
-          v.labels[v.dataIndex],' ',
-          (v.percent*1000|0)/10,
-          String.fromCharCode(37)].join('')
-      }
-    }
-  },
-  data: {...
-`
-436e17  44.24s Had Enough Items;
-3C6315  42.94s Had Enough Items (Plugins);
-9e2174   5.47s Tinkers' Construct;
-8E1E68  58.01s Tinkers' Construct (Oredict Melting);
-5161a8  23.58s CraftTweaker2;
-8f3087  21.30s Forge Mod Loader;
-8f3041  19.63s Tech Reborn;
-813e81  16.54s OpenComputers;
-516fa8  15.49s Ender IO;
-8c2ccd  14.31s Immersive Engineering;
-9d2ccd  12.08s Immersive Intelligence;
-3e6c81  11.31s Solar Flux Reborn;
-cd922c  10.72s NuclearCraft;
-8f304e  10.60s Astral Sorcery;
-213664   8.91s Forestry;
-813e4d   8.67s GroovyScript;
-7c813e   6.92s Thaumcraft;
-436e17   6.57s Integrated Dynamics;
-2caacd   6.43s PneumaticCraft: Repressurized;
-8451a8   5.75s LibrarianLib Stage 2;
-176e43   5.35s Thaumic Additions: Reconstructed;
-216364   5.32s Xaero's Minimap;
-444444 179.32s 83 Other mods;
-333333  78.95s 218 'Fast' mods (load 1.0s - 0.1s);
-222222   8.90s 224 'Instant' mods (load %3C 0.1s)
-`
-    .split(';').reduce((a, l) => {
-      l.match(/(\w{6}) *(\d*\.\d*)s (.*)/)
-      .slice(1).map((a, i) => [[String.fromCharCode(35),a].join(''), parseFloat(a), a][i])
-      .forEach((s, i) => 
-        [a.datasets[0].backgroundColor, a.datasets[0].data, a.labels][i].push(s)
-      );
-      return a
-    }, {
-      labels: [],
-      datasets: [{
-        backgroundColor: [],
-        data: [],
-        borderColor: 'rgba(22,22,22,0.3)',
-        borderWidth: 1
-      }]
-    })
-  }
-}"/>
+<img src="https://quickchart.io/chart?w=400&h=300&c={%20type:%20'outlabeledPie',%20options:%20{%20cutoutPercentage:%2025,%20plugins:%20{%20legend:%20!1,%20outlabels:%20{%20stretch:%205,%20padding:%201,%20text:%20(v,i)=>[%20v.labels[v.dataIndex],'%20',%20(v.percent*1000|0)/10,%20String.fromCharCode(37)].join('')%20}%20}%20},%20data:%20{...%20`%20436e17%2044.24s%20Had%20Enough%20Items;%203C6315%2042.94s%20Had%20Enough%20Items%20(Plugins);%209e2174%205.47s%20Tinkers'%20Construct;%208E1E68%2058.01s%20Tinkers'%20Construct%20(Oredict%20Melting);%205161a8%2023.58s%20CraftTweaker2;%208f3087%2021.30s%20Forge%20Mod%20Loader;%208f3041%2019.63s%20Tech%20Reborn;%20813e81%2016.54s%20OpenComputers;%20516fa8%2015.49s%20Ender%20IO;%208c2ccd%2014.31s%20Immersive%20Engineering;%209d2ccd%2012.08s%20Immersive%20Intelligence;%203e6c81%2011.31s%20Solar%20Flux%20Reborn;%20cd922c%2010.72s%20NuclearCraft;%208f304e%2010.60s%20Astral%20Sorcery;%20213664%208.91s%20Forestry;%20813e4d%208.67s%20GroovyScript;%207c813e%206.92s%20Thaumcraft;%20436e17%206.57s%20Integrated%20Dynamics;%202caacd%206.43s%20PneumaticCraft:%20Repressurized;%208451a8%205.75s%20LibrarianLib%20Stage%202;%20176e43%205.35s%20Thaumic%20Additions:%20Reconstructed;%20216364%205.32s%20Xaero's%20Minimap;%20444444%20179.32s%2083%20Other%20mods;%20333333%2078.95s%20218%20'Fast'%20mods%20(load%201.0s%20-%200.1s);%20222222%208.90s%20224%20'Instant'%20mods%20(load%20%3C%200.1s)%20`%20.split(';').reduce((a,%20l)%20=>%20{%20l.match(/(\w{6})%20*(\d*\.\d*)s%20(.*)/)%20.slice(1).map((a,%20i)%20=>%20[[String.fromCharCode(35),a].join(''),%20parseFloat(a),%20a][i])%20.forEach((s,%20i)%20=>%20[a.datasets[0].backgroundColor,%20a.datasets[0].data,%20a.labels][i].push(s)%20);%20return%20a%20},%20{%20labels:%20[],%20datasets:%20[{%20backgroundColor:%20[],%20data:%20[],%20borderColor:%20'rgba(22,22,22,0.3)',%20borderWidth:%201%20}]%20})%20}%20}"/>
 </p>
 
 <br>
 
 # Top Mods Details (except JEI, FML and Forge)
 <p align="center">
-<img src="https://quickchart.io/chart?w=400&h=450&c={
-  options: {
-    scales: {
-      xAxes: [{stacked: true}],
-      yAxes: [{stacked: true}],
-    },
-    plugins: {
-      datalabels: {
-        anchor: 'end',
-        align: 'top',
-        color: 'white',
-        backgroundColor: 'rgba(46, 140, 171, 0.6)',
-        borderColor: 'rgba(41, 168, 194, 1.0)',
-        borderWidth: 0.5,
-        borderRadius: 3,
-        padding: 0,
-        font: {size:10},
-        formatter: (v,ctx) => 
-          ctx.datasetIndex!=ctx.chart.data.datasets.length-1 ? null
-            : [((ctx.chart.data.datasets.reduce((a,b)=>a- -b.data[ctx.dataIndex],0)*10)|0)/10,'s'].join('')
-      },
-      colorschemes: {
-        scheme: 'office.Damask6'
-      }
-    }
-  },
-  type: 'bar',
-  data: {...(() => {
-    let a = { labels: [], datasets: [] };
-`
-1: Construction;
-2: Loading Resources;
-3: PreInitialization;
-4: Initialization;
-5: InterModComms$IMC;
-6: PostInitialization;
-7: LoadComplete;
-8: ModIdMapping
-`
-    .split(';')
-      .map(l => l.match(/\d: (.*)/).slice(1))
-      .forEach(([name]) => a.datasets.push({ label: name, data: [] }));
-`
-                           1      2      3      4      5      6      7      8  ;
-Tinkers' Construct     |  1.72|  0.01|  0.24|  0.13|  0.00| 61.38|  0.00|  0.00;
-CraftTweaker2          |  1.28|  0.00| 17.79|  0.01|  0.00|  4.50|  0.00|  0.00;
-Tech Reborn            |  0.18|  0.01| 16.59|  0.65|  0.00|  2.20|  0.00|  0.00;
-OpenComputers          |  0.27|  0.03| 11.91|  4.04|  0.30|  0.00|  0.00|  0.00;
-Ender IO               |  3.16|  0.01|  4.93|  0.77|  4.42|  1.20|  0.00|  1.01;
-Immersive Engineering  |  1.32|  0.01|  1.45|  1.38|  0.00| 10.15|  0.00|  0.00;
-Immersive Intelligence |  3.00|  0.02|  3.59|  1.06|  0.00|  4.42|  0.00|  0.00;
-Solar Flux Reborn      |  0.12|  0.00|  1.06|  0.06|  0.00| 10.07|  0.00|  0.00;
-NuclearCraft           |  1.58|  0.02|  7.87|  0.66|  0.00|  0.48|  0.00|  0.12;
-Astral Sorcery         |  0.53|  0.01|  6.81|  2.21|  0.00|  1.05|  0.00|  0.00;
-Forestry               |  0.82|  0.02|  6.23|  1.48|  0.01|  0.36|  0.00|  0.00;
-GroovyScript           |  3.03|  0.02|  0.00|  0.02|  0.00|  5.60|  0.00|  0.00
-`
-    .split(';').slice(1)
-      .map(l => l.split('|').map(s => s.trim()))
-      .forEach(([name, ...arr], i) => {
-        a.labels.push(name);
-        arr.forEach((v, j) => a.datasets[j].data[i] = v)
-      }); return a
-  })()}
-}"/>
+<img src="https://quickchart.io/chart?w=400&h=450&c={%20options:%20{%20scales:%20{%20xAxes:%20[{stacked:%20true}],%20yAxes:%20[{stacked:%20true}],%20},%20plugins:%20{%20datalabels:%20{%20anchor:%20'end',%20align:%20'top',%20color:%20'white',%20backgroundColor:%20'rgba(46,%20140,%20171,%200.6)',%20borderColor:%20'rgba(41,%20168,%20194,%201.0)',%20borderWidth:%200.5,%20borderRadius:%203,%20padding:%200,%20font:%20{size:10},%20formatter:%20(v,ctx)%20=>%20ctx.datasetIndex!=ctx.chart.data.datasets.length-1%20?%20null%20:%20[((ctx.chart.data.datasets.reduce((a,b)=>a-%20-b.data[ctx.dataIndex],0)*10)|0)/10,'s'].join('')%20},%20colorschemes:%20{%20scheme:%20'office.Damask6'%20}%20}%20},%20type:%20'bar',%20data:%20{...(()%20=>%20{%20let%20a%20=%20{%20labels:%20[],%20datasets:%20[]%20};%20`%201:%20Construction;%202:%20Loading%20Resources;%203:%20PreInitialization;%204:%20Initialization;%205:%20InterModComms$IMC;%206:%20PostInitialization;%207:%20LoadComplete;%208:%20ModIdMapping%20`%20.split(';')%20.map(l%20=>%20l.match(/\d:%20(.*)/).slice(1))%20.forEach(([name])%20=>%20a.datasets.push({%20label:%20name,%20data:%20[]%20}));%20`%201%202%203%204%205%206%207%208%20;%20Tinkers'%20Construct%20|%201.72|%200.01|%200.24|%200.13|%200.00|%2061.38|%200.00|%200.00;%20CraftTweaker2%20|%201.28|%200.00|%2017.79|%200.01|%200.00|%204.50|%200.00|%200.00;%20Tech%20Reborn%20|%200.18|%200.01|%2016.59|%200.65|%200.00|%202.20|%200.00|%200.00;%20OpenComputers%20|%200.27|%200.03|%2011.91|%204.04|%200.30|%200.00|%200.00|%200.00;%20Ender%20IO%20|%203.16|%200.01|%204.93|%200.77|%204.42|%201.20|%200.00|%201.01;%20Immersive%20Engineering%20|%201.32|%200.01|%201.45|%201.38|%200.00|%2010.15|%200.00|%200.00;%20Immersive%20Intelligence%20|%203.00|%200.02|%203.59|%201.06|%200.00|%204.42|%200.00|%200.00;%20Solar%20Flux%20Reborn%20|%200.12|%200.00|%201.06|%200.06|%200.00|%2010.07|%200.00|%200.00;%20NuclearCraft%20|%201.58|%200.02|%207.87|%200.66|%200.00|%200.48|%200.00|%200.12;%20Astral%20Sorcery%20|%200.53|%200.01|%206.81|%202.21|%200.00|%201.05|%200.00|%200.00;%20Forestry%20|%200.82|%200.02|%206.23|%201.48|%200.01|%200.36|%200.00|%200.00;%20GroovyScript%20|%203.03|%200.02|%200.00|%200.02|%200.00|%205.60|%200.00|%200.00%20`%20.split(';').slice(1)%20.map(l%20=>%20l.split('|').map(s%20=>%20s.trim()))%20.forEach(([name,%20...arr],%20i)%20=>%20{%20a.labels.push(name);%20arr.forEach((v,%20j)%20=>%20a.datasets[j].data[i]%20=%20v)%20});%20return%20a%20})()}%20}"/>
 </p>
 
 <br>
 
 # TOP JEI Registered Plugis
 <p align="center">
-<img src="https://quickchart.io/chart?w=700&c={
-  options: {
-    elements: { rectangle: { borderWidth: 1 } },
-    legend: false
-  },
-  type: 'horizontalBar',
-    data: {...(() => {
-      let a = {
-        labels: [], datasets: [{
-          backgroundColor: 'rgba(0, 99, 132, 0.5)',
-          borderColor: 'rgb(0, 99, 132)',
-          data: []
-        }]
-      };
-`
- 11.81: cofh.thermalexpansion.plugins.jei.JEIPluginTE;
-  4.78: li.cil.oc.integration.jei.ModPluginOpenComputers;
-  3.15: crazypants.enderio.machines.integration.jei.MachinesPlugin;
-  2.52: forestry.factory.recipes.jei.FactoryJeiPlugin;
-  2.39: com.cleanroommc.multiblocked.jei.JeiPlugin;
-  2.07: com.rwtema.extrautils2.crafting.jei.XUJEIPlugin;
-  1.77: com.github.sokyranthedragon.mia.integrations.jer.JeiJerIntegration$1;
-  1.57: mezz.jei.plugins.vanilla.VanillaPlugin;
-  1.40: jeresources.jei.JEIConfig;
-  0.89: com.buuz135.industrial.jei.JEICustomPlugin;
-  0.89: nc.integration.jei.NCJEI;
-  0.88: com.buuz135.thaumicjei.ThaumcraftJEIPlugin;
-  0.69: sblectric.lightningcraft.integration.jei.JEIPlugin;
-  0.58: crazypants.enderio.base.integration.jei.JeiPlugin;
-  0.52: mctmods.smelteryio.library.util.jei.JEI;
-  7.04: Other 139 Plugins
-`
-        .split(';')
-        .map(l => l.split(':'))
-        .forEach(([time, name]) => {
-          a.labels.push(name);
-          a.datasets[0].data.push(time)
-        })
-        ; return a
-    })()
-  }
-}"/>
+<img src="https://quickchart.io/chart?w=700&c={%20options:%20{%20elements:%20{%20rectangle:%20{%20borderWidth:%201%20}%20},%20legend:%20false%20},%20type:%20'horizontalBar',%20data:%20{...(()%20=>%20{%20let%20a%20=%20{%20labels:%20[],%20datasets:%20[{%20backgroundColor:%20'rgba(0,%2099,%20132,%200.5)',%20borderColor:%20'rgb(0,%2099,%20132)',%20data:%20[]%20}]%20};%20`%2011.81:%20cofh.thermalexpansion.plugins.jei.JEIPluginTE;%204.78:%20li.cil.oc.integration.jei.ModPluginOpenComputers;%203.15:%20crazypants.enderio.machines.integration.jei.MachinesPlugin;%202.52:%20forestry.factory.recipes.jei.FactoryJeiPlugin;%202.39:%20com.cleanroommc.multiblocked.jei.JeiPlugin;%202.07:%20com.rwtema.extrautils2.crafting.jei.XUJEIPlugin;%201.77:%20com.github.sokyranthedragon.mia.integrations.jer.JeiJerIntegration$1;%201.57:%20mezz.jei.plugins.vanilla.VanillaPlugin;%201.40:%20jeresources.jei.JEIConfig;%200.89:%20com.buuz135.industrial.jei.JEICustomPlugin;%200.89:%20nc.integration.jei.NCJEI;%200.88:%20com.buuz135.thaumicjei.ThaumcraftJEIPlugin;%200.69:%20sblectric.lightningcraft.integration.jei.JEIPlugin;%200.58:%20crazypants.enderio.base.integration.jei.JeiPlugin;%200.52:%20mctmods.smelteryio.library.util.jei.JEI;%207.04:%20Other%20139%20Plugins%20`%20.split(';')%20.map(l%20=>%20l.split(':'))%20.forEach(([time,%20name])%20=>%20{%20a.labels.push(name);%20a.datasets[0].data.push(time)%20})%20;%20return%20a%20})()%20}%20}"/>
 </p>
 
 <br>
 
 # FML Stuff
 <p align="center">
-<img src="https://quickchart.io/chart?w=500&h=400&c={
-  options: {
-    rotation: Math.PI,
-    cutoutPercentage: 55,
-    plugins: {
-      legend: !1,
-      outlabels: {
-        stretch: 5,
-        padding: 1,
-        text: (v)=>v.labels
-      },
-      doughnutlabel: {
-        labels: [
-          {
-            text: 'FML stuff:',
-            color: 'rgba(128, 128, 128, 0.5)',
-            font: {size: 18}
-          },
-          {
-            text: [557.36,'s'].join(''),
-            color: 'rgba(128, 128, 128, 1)',
-            font: {size: 22}
-          }
-        ]
-      },
-    }
-  },
-  type: 'outlabeledPie',
-  data: {...(() => {
-    let a = {
-      labels: [],
-      datasets: [{
-        backgroundColor: [],
-        data: [],
-        borderColor: 'rgba(22,22,22,0.3)',
-        borderWidth: 2
-      }]
-    };
-`
-993A00  14.85s Loading sounds;
-994400  14.94s Loading Resource - SoundHandler;
-994F00 128.44s ModelLoader: blocks;
-995900  34.44s ModelLoader: items;
-996300  18.36s ModelLoader: baking;
-996D00   3.90s Applying remove recipe actions;
-997700   0.03s Applying remove furnace recipe actions;
-998200   0.51s Indexing ingredients;
-998C00   5.09s Indexing ingredients;
-444444 336.82s Other
-`
-    .split(';')
-      .map(l => l.match(/(\w{6}) *(\d*\.\d*)s (.*)/))
-      .forEach(([, col, time, name]) => {
-        a.labels.push([name, ' ', time, 's'].join(''));
-        a.datasets[0].data.push(parseFloat(time));
-        a.datasets[0].backgroundColor.push([String.fromCharCode(35), col].join(''))
-      })
-      ; return a
-  })()}
-}"/>
+<img src="https://quickchart.io/chart?w=500&h=400&c={%20options:%20{%20rotation:%20Math.PI,%20cutoutPercentage:%2055,%20plugins:%20{%20legend:%20!1,%20outlabels:%20{%20stretch:%205,%20padding:%201,%20text:%20(v)=>v.labels%20},%20doughnutlabel:%20{%20labels:%20[%20{%20text:%20'FML%20stuff:',%20color:%20'rgba(128,%20128,%20128,%200.5)',%20font:%20{size:%2018}%20},%20{%20text:%20[557.36,'s'].join(''),%20color:%20'rgba(128,%20128,%20128,%201)',%20font:%20{size:%2022}%20}%20]%20},%20}%20},%20type:%20'outlabeledPie',%20data:%20{...(()%20=>%20{%20let%20a%20=%20{%20labels:%20[],%20datasets:%20[{%20backgroundColor:%20[],%20data:%20[],%20borderColor:%20'rgba(22,22,22,0.3)',%20borderWidth:%202%20}]%20};%20`%20993A00%2014.85s%20Loading%20sounds;%20994400%2014.94s%20Loading%20Resource%20-%20SoundHandler;%20994F00%20128.44s%20ModelLoader:%20blocks;%20995900%2034.44s%20ModelLoader:%20items;%20996300%2018.36s%20ModelLoader:%20baking;%20996D00%203.90s%20Applying%20remove%20recipe%20actions;%20997700%200.03s%20Applying%20remove%20furnace%20recipe%20actions;%20998200%200.51s%20Indexing%20ingredients;%20998C00%205.09s%20Indexing%20ingredients;%20444444%20336.82s%20Other%20`%20.split(';')%20.map(l%20=>%20l.match(/(\w{6})%20*(\d*\.\d*)s%20(.*)/))%20.forEach(([,%20col,%20time,%20name])%20=>%20{%20a.labels.push([name,%20'%20',%20time,%20's'].join(''));%20a.datasets[0].data.push(parseFloat(time));%20a.datasets[0].backgroundColor.push([String.fromCharCode(35),%20col].join(''))%20})%20;%20return%20a%20})()}%20}"/>
 </p>
 
 <br>
